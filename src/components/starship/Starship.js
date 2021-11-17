@@ -1,11 +1,30 @@
+import {
+  ImageBox,
+  ContentBox,
+  StarshipInfo,
+  StarshipName,
+  Wrapper,
+  StarshipModel,
+  SManufacturer,
+  SPassengers,
+  SClass,
+  SMainInfo,
+} from './styles'
+
 function Starship({ starship }) {
   return (
-    <div>
-      <h2>{starship.name}name</h2> <h2>{starship.model}model</h2>
-      <h2>{starship.manufacturer} manufacturer</h2>
-      <h2>{starship.passengers} passengers</h2>
-      <h2>{starship.starship_class} starship class</h2>
-    </div>
+    <Wrapper>
+      <SMainInfo>
+        <StarshipName>{starship.name} name</StarshipName>
+        <ImageBox>asd</ImageBox>
+      </SMainInfo>
+      <StarshipInfo>
+        <StarshipModel>{starship.model}model</StarshipModel> cursiva
+        <SManufacturer>{starship.manufacturer} manufacturer</SManufacturer>
+        <SPassengers> {starship.passengers} passengers</SPassengers>
+        <SClass> {starship.starship_class} starship class</SClass>
+      </StarshipInfo>
+    </Wrapper>
   )
 }
 
