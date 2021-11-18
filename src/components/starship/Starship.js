@@ -22,12 +22,12 @@ function Starship({ starship }) {
       for (let char of starship.url) {
         if (!isNaN(char)) numberArray.push(char)
       }
-      return numberArray
+      return numberArray.join('')
     }
-    const joinedNumbers = urlNumbers().join('')
+
     setUrl(
       (prevUrl) =>
-        (prevUrl = `https://starwars-visualguide.com/assets/img/starships/${joinedNumbers}.jpg`)
+        (prevUrl = `https://starwars-visualguide.com/assets/img/starships/${urlNumbers()}.jpg`)
     )
   }, [starship.url])
 
