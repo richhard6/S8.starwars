@@ -47,3 +47,7 @@ export const SMainInfo = styled.div`
   display: flex;
   flex-direction: column;
 `
+
+export const Image = styled.img`
+  width: 100%;
+`

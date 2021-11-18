@@ -1,6 +1,5 @@
 import {
   ImageBox,
-  ContentBox,
   StarshipInfo,
   StarshipName,
   Wrapper,
@@ -9,27 +8,37 @@ import {
   SPassengers,
   SClass,
   SMainInfo,
+  Image,
 } from './styles'
 
 import { useState, useEffect } from 'react'
 
 function Starship({ starship }) {
   const [url, setUrl] = useState('')
-  let starshipImg = starship.url.search(/[0-9]/)
-  useEffect(() => {
-    let starshipNumber = starship.url.charAt(starshipImg)
-    let starshipURL = `https://starwars-visualguide.com/assets/img/starships/${starshipNumber}.jpg`
-    //hay un  problemac on los numeros de dos cifrs.... dsolo pilla el primer numero
-    setUrl((prevUrl) => (prevUrl = starshipURL))
-  }, [starship.url, starshipImg])
 
-  /* `https://starwars-visualguide.com/assets/img/starships/${starshipImg}.jpg` */
+  useEffect(() => {
+    const urlNumbers = () => {
+      let numberArray = []
+      for (let char of starship.url) {
+        if (!isNaN(char)) numberArray.push(char)
+      }
+      return numberArray
+    }
+    const joinedNumbers = urlNumbers().join('')
+    setUrl(
+      (prevUrl) =>
+        (prevUrl = `https://starwars-visualguide.com/assets/img/starships/${joinedNumbers}.jpg`)
+    )
+  }, [starship.url])
+
+  //Quizas aqui solo debamos mostrar la foto con el nombre, y al hacer click ahi si la demas info
+
   return (
     <Wrapper>
       <SMainInfo>
         <StarshipName>{starship.name} name</StarshipName>
         <ImageBox>
-          <img src={url} alt={starship.name} />
+          <Image src={url} alt={starship.name} />
         </ImageBox>
       </SMainInfo>
       <StarshipInfo>
