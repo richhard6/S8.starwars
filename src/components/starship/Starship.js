@@ -37,12 +37,12 @@ function Starship({ starship }) {
           <Image src={url} alt={starship.name} />
         </ImageBox>
       </SMainInfo>
-      <StarshipInfo>
+      {/*        <StarshipInfo>
         <StarshipModel>{starship.model}model</StarshipModel>
         <SManufacturer>{starship.manufacturer} manufacturer</SManufacturer>
         <SPassengers> {starship.passengers} passengers</SPassengers>
         <SClass> {starship.starship_class} starship class</SClass>
-      </StarshipInfo>
+      </StarshipInfo> */}
     </Wrapper>
   )
 }
