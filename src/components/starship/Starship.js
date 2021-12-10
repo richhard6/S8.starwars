@@ -11,23 +11,19 @@ import {
   Image,
 } from './styles'
 
+import { urlNumbers } from '../../utils/utils'
+
 import { useState, useEffect } from 'react'
 
 function Starship({ starship }) {
   const [url, setUrl] = useState('')
 
   useEffect(() => {
-    const urlNumbers = () => {
-      let numberArray = []
-      for (let char of starship.url) {
-        if (!isNaN(char)) numberArray.push(char)
-      }
-      return numberArray.join('')
-    }
-
     setUrl(
       (prevUrl) =>
-        (prevUrl = `https://starwars-visualguide.com/assets/img/starships/${urlNumbers()}.jpg`)
+        (prevUrl = `https://starwars-visualguide.com/assets/img/starships/${urlNumbers(
+          starship.url
+        )}.jpg`)
     )
   }, [starship.url])
 
