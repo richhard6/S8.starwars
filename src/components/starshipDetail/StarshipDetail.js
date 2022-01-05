@@ -16,7 +16,6 @@ import {
 } from '../starship/styles'
 
 function StarshipDetail() {
-  //agarrar el numero de la URL y ghacer el fetch indivual ... !
   const [starship, setStarship] = useState({})
 
   const { name } = useParams()
@@ -31,11 +30,10 @@ function StarshipDetail() {
 
   const url = `https://starwars-visualguide.com/assets/img/starships/${name}.jpg`
 
-  console.log(starship)
   return (
     <Wrapper>
       <SMainInfo>
-        <StarshipName>{starship.name} name</StarshipName>
+        <StarshipName>{starship.name} </StarshipName>
         <ImageBox>
           <Image src={url} alt={starship.name} />
         </ImageBox>

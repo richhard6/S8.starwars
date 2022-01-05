@@ -1,15 +1,4 @@
-import {
-  ImageBox,
-  StarshipInfo,
-  StarshipName,
-  Wrapper,
-  StarshipModel,
-  SManufacturer,
-  SPassengers,
-  SClass,
-  SMainInfo,
-  Image,
-} from './styles'
+import { ImageBox, StarshipName, Wrapper, SMainInfo, Image } from './styles'
 
 import { urlNumbers } from '../../utils/utils'
 
@@ -27,22 +16,14 @@ function Starship({ starship }) {
     )
   }, [starship.url])
 
-  //Quizas aqui solo debamos mostrar la foto con el nombre, y al hacer click ahi si la demas info
-
   return (
     <Wrapper>
       <SMainInfo>
-        <StarshipName>{starship.name} name</StarshipName>
+        <StarshipName>{starship.name} </StarshipName>
         <ImageBox>
           <Image src={url} alt={starship.name} />
         </ImageBox>
       </SMainInfo>
-      {/*        <StarshipInfo>
-        <StarshipModel>{starship.model}model</StarshipModel>
-        <SManufacturer>{starship.manufacturer} manufacturer</SManufacturer>
-        <SPassengers> {starship.passengers} passengers</SPassengers>
-        <SClass> {starship.starship_class} starship class</SClass>
-      </StarshipInfo> */}
     </Wrapper>
   )
 }
