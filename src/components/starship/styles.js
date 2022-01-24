@@ -37,14 +37,17 @@ export const StarshipInfo = styled.div`
 export const StarshipModel = styled.h3`
   font-style: italic;
   font-weight: 200;
+  margin-bottom: 1rem;
 `
 
 export const SManufacturer = styled.h3`
   font-weight: 900;
+  margin-bottom: 1rem;
 `
 
 export const SPassengers = styled.h3`
   font-weight: 500;
+  margin-bottom: 1rem;
 `
 
 export const SClass = styled.h4`
@@ -61,5 +64,4 @@ export const SMainInfo = styled.div`
 export const Image = styled.img`
   width: 100%;
   border-radius: 8px;
-  margin-top: 1.2rem;
 `

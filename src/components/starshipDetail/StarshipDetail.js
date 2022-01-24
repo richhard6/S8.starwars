@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
+import { Button } from '../home/styles'
 
 import {
   Wrapper,
@@ -17,6 +18,8 @@ import {
 
 function StarshipDetail() {
   const [starship, setStarship] = useState({})
+
+  const navigate = useNavigate()
 
   const { name } = useParams()
 
@@ -43,6 +46,7 @@ function StarshipDetail() {
         <SManufacturer>{starship.manufacturer} manufacturer</SManufacturer>
         <SPassengers> {starship.passengers} passengers</SPassengers>
         <SClass> {starship.starship_class} starship class</SClass>
+        <Button onClick={() => navigate(-1)}>⬅️</Button>
       </StarshipInfo>
     </Wrapper>
   )
