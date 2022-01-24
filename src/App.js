@@ -9,6 +9,8 @@ function App() {
   const [starships, setStarships] = useState([])
   const [page, setPage] = useState(0)
 
+  const [loading, setLoading] = useState(false)
+
   useEffect(() => {
     fetch('https://swapi.dev/api/starships/')
       .then((data) => data.json())
@@ -16,16 +18,23 @@ function App() {
   }, [])
 
   useEffect(() => {
-    fetch(`https://swapi.dev/api/starships/?page=${page}`)
-      .then((data) => data.json())
-      .then((starships) =>
-        setStarships((prevStarships) => {
-          return { ...prevStarships, ...starships }
+    if (page > 1) {
+      fetch(`https://swapi.dev/api/starships/?page=${page}`)
+        .then((data) => data.json())
+        .then((starships) => {
+          setLoading(false)
+          if (starships.results)
+            setStarships((prevStar) => ({
+              ...prevStar,
+              results: [...prevStar.results, ...starships.results],
+            }))
         })
-      )
+    }
+
+    if (page > 4) return
   }, [page])
 
-  console.log(starships)
+  console.log(loading)
   return (
     <Router>
       <Routes>
@@ -33,7 +42,13 @@ function App() {
         <Route
           path="/starshiplist"
           element={
-            <StarshipList starships={starships} setPage={setPage} page={page} />
+            <StarshipList
+              starships={starships}
+              setPage={setPage}
+              page={page}
+              setLoading={setLoading}
+              loading={loading}
+            />
           }
         ></Route>
         <Route path="/" element={<Home />}></Route>
