@@ -18,7 +18,7 @@ function Starship({ starship }) {
 
   return (
     <Wrapper>
-      <SMainInfo>
+      <SMainInfo starship>
         <StarshipName>{starship.name} </StarshipName>
         <ImageBox>
           <Image src={url} alt={starship.name} />

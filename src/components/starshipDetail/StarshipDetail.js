@@ -31,7 +31,7 @@ function StarshipDetail() {
   const url = `https://starwars-visualguide.com/assets/img/starships/${name}.jpg`
 
   return (
-    <Wrapper>
+    <Wrapper detail>
       <SMainInfo>
         <StarshipName>{starship.name} </StarshipName>
         <ImageBox>

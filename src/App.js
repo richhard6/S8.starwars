@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import StarshipList from './components/starshipList/StarshipList'
 import StarshipDetail from './components/starshipDetail/StarshipDetail'
 
+import { Theme } from './styles'
 function App() {
   const [starships, setStarships] = useState([])
   const [page, setPage] = useState(0)
@@ -36,24 +37,26 @@ function App() {
 
   console.log(loading)
   return (
-    <Router>
-      <Routes>
-        <Route path="/starships/:name" element={<StarshipDetail />}></Route>
-        <Route
-          path="/starshiplist"
-          element={
-            <StarshipList
-              starships={starships}
-              setPage={setPage}
-              page={page}
-              setLoading={setLoading}
-              loading={loading}
-            />
-          }
-        ></Route>
-        <Route path="/" element={<Home />}></Route>
-      </Routes>
-    </Router>
+    <Theme>
+      <Router>
+        <Routes>
+          <Route path="/starships/:name" element={<StarshipDetail />}></Route>
+          <Route
+            path="/starshiplist"
+            element={
+              <StarshipList
+                starships={starships}
+                setPage={setPage}
+                page={page}
+                setLoading={setLoading}
+                loading={loading}
+              />
+            }
+          ></Route>
+          <Route path="/" element={<Home />}></Route>
+        </Routes>
+      </Router>
+    </Theme>
   )
 }
 
