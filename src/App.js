@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import StarshipList from './components/starshipList/StarshipList'
 import StarshipDetail from './components/starshipDetail/StarshipDetail'
-
+import Login from './components/login/Login'
+import CreateAccount from './components/createAccount/CreateAccount'
 import { Theme } from './styles'
 function App() {
   const [starships, setStarships] = useState([])
@@ -53,6 +54,8 @@ function App() {
               />
             }
           ></Route>
+          <Route path="/create" element={<CreateAccount />}></Route>
+          <Route path="/logIn" element={<Login />}></Route>
           <Route path="/" element={<Home />}></Route>
         </Routes>
       </Router>
