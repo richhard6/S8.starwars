@@ -1,5 +1,9 @@
 import { useState } from 'react'
 
+import { Wrapper, Input } from './styles'
+
+import { Button } from '../home/styles'
+
 function CreateAccount() {
   const [user, setUser] = useState({ username: '', password: '' })
 
@@ -10,8 +14,8 @@ function CreateAccount() {
   }
 
   return (
-    <>
-      <input
+    <Wrapper>
+      <Input
         placeholder="username"
         value={user.username}
         onChange={(e) =>
@@ -25,7 +29,7 @@ function CreateAccount() {
         }
       />
 
-      <input
+      <Input
         placeholder="password"
         value={user.password}
         onChange={(e) =>
@@ -38,8 +42,10 @@ function CreateAccount() {
         }
       />
 
-      <button onClick={createUser}>Create Account</button>
-    </>
+      <Button small onClick={createUser}>
+        Create Account
+      </Button>
+    </Wrapper>
   )
 }
 

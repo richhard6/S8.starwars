@@ -6,8 +6,21 @@ import debounce from 'just-debounce-it'
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { Spinner, Wrapper } from './styles'
 
+import { useUser } from '../../hooks/useUser'
+
 function StarshipList({ starships, setPage, page, setLoading, loading }) {
   const navigate = useNavigate()
+  const currentUser = useUser()
+
+  useEffect(() => {
+    console.log(currentUser)
+    /*  if (currentUser) {
+     
+    } */
+    setTimeout(() => {
+      if (currentUser.name === '') navigate('../create') // salta a la pagina aunque este logeado porque al principion esta vacio.
+    }, 4000)
+  }, [currentUser, navigate])
 
   const externalRef = useRef()
 

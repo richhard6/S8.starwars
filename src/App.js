@@ -7,6 +7,9 @@ import StarshipDetail from './components/starshipDetail/StarshipDetail'
 import Login from './components/login/Login'
 import CreateAccount from './components/createAccount/CreateAccount'
 import { Theme } from './styles'
+import { useUser } from './hooks/useUser'
+import { useNavigate } from 'react-router-dom'
+
 function App() {
   const [starships, setStarships] = useState([])
   const [page, setPage] = useState(0)
