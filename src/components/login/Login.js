@@ -1,8 +1,14 @@
 import { useState } from 'react'
 
+import { Wrapper, Input } from '../createAccount/styles'
+
+import { Button } from '../home/styles'
+
+import { useNavigate } from 'react-router-dom'
+
 function Login() {
   const [user, setUser] = useState({ name: '', password: '' })
-
+  const navigate = useNavigate()
   const allStorage = () => {
     let values = [],
       keys = Object.keys(localStorage),
@@ -28,6 +34,7 @@ function Login() {
       if (succesfull) {
         sessionStorage.setItem('currentUser', JSON.stringify(isMatch))
         console.log('logged in')
+        navigate('../starshiplist')
       } else {
         console.log('wrong password')
       }
@@ -35,8 +42,8 @@ function Login() {
   }
 
   return (
-    <>
-      <input
+    <Wrapper>
+      <Input
         placeholder="username"
         value={user.username}
         onChange={(e) =>
@@ -50,7 +57,7 @@ function Login() {
         }
       />
 
-      <input
+      <Input
         placeholder="password"
         value={user.password}
         onChange={(e) =>
@@ -63,8 +70,10 @@ function Login() {
         }
       />
 
-      <button onClick={logIn}>Log In</button>
-    </>
+      <Button small onClick={logIn}>
+        Log In
+      </Button>
+    </Wrapper>
   )
 }
 
