@@ -13,14 +13,10 @@ function StarshipList({ starships, setPage, page, setLoading, loading }) {
   const currentUser = useUser()
 
   useEffect(() => {
-    console.log(currentUser)
-    /*  if (currentUser) {
-     
-    } */
-    setTimeout(() => {
-      if (currentUser.name === '') navigate('../create') // salta a la pagina aunque este logeado porque al principion esta vacio.
-    }, 4000)
-  }, [currentUser, navigate])
+    const getCurrentUser = JSON.parse(sessionStorage.getItem('currentUser'))
+
+    if (!getCurrentUser) navigate('../create')
+  }, [navigate])
 
   const externalRef = useRef()
 
