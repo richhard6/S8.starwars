@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-function Film({ url }) {
+function Film({ url, pilots }) {
   const [film, setFilm] = useState([])
 
   console.log(url)
@@ -11,7 +11,7 @@ function Film({ url }) {
       .then((film) => setFilm(film))
   }, [url])
 
-  return <div>{film.title}</div>
+  return <div>{!pilots ? film.title : film.name} </div>
 }
 
 export default Film

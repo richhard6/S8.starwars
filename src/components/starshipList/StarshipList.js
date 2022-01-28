@@ -6,11 +6,8 @@ import debounce from 'just-debounce-it'
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { Spinner, Wrapper } from './styles'
 
-import { useUser } from '../../hooks/useUser'
-
 function StarshipList({ starships, setPage, page, setLoading, loading }) {
   const navigate = useNavigate()
-  const currentUser = useUser()
 
   useEffect(() => {
     const getCurrentUser = JSON.parse(sessionStorage.getItem('currentUser'))
@@ -31,14 +28,11 @@ function StarshipList({ starships, setPage, page, setLoading, loading }) {
   )
 
   useEffect(() => {
-    console.log(isNearScreen, page)
     if (isNearScreen) {
       if (page < 4) setLoading(true)
       debouceHandleNextPage()
     }
   }, [debouceHandleNextPage, isNearScreen, page, setLoading])
-
-  //al llegar al final ya sale true, hay que hacer que hace un nuevo fetch con el page number nuevo y añadir al array que ya se habia creado con la info de las naves
 
   const handleClick = (starship) => {
     navigate(`/starships/${starship}`)
