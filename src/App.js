@@ -15,10 +15,9 @@ function App() {
   const [starships, setStarships] = useState([])
   const [page, setPage] = useState(0)
 
-  //FALTA NAVIGATION BAR ..... Y MOSTRAR QUIEN ESTA LOGEADO,
   //FALTA MOSTRAR LOS ACTORES Y LAS PELIS EN LAS QUE HAN SALIDO ESAS NAVES
   //CREANDAO NUEVO COMPKNENTE REEUTILIZABOE
-  //NAV BAR Y UNITN TEST Y DONE
+  //UNITN TEST Y DONE
 
   const [loading, setLoading] = useState(false)
 
@@ -45,7 +44,6 @@ function App() {
     if (page > 4) return
   }, [page])
 
-  console.log(loading)
   return (
     <Theme>
       <Router>

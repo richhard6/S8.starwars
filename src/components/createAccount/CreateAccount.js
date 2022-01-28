@@ -8,7 +8,8 @@ import { useNavigate } from 'react-router-dom'
 
 function CreateAccount() {
   const [user, setUser] = useState({ username: '', password: '' })
-  let navigate = useNavigate
+  let navigate = useNavigate()
+
   const createUser = () => {
     if (user.username && user.password !== '') {
       localStorage.setItem(user.username, JSON.stringify(user))
@@ -36,6 +37,7 @@ function CreateAccount() {
       <Input
         placeholder="password"
         value={user.password}
+        type="password"
         onChange={(e) =>
           setUser((prevUser) => {
             return {

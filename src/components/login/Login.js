@@ -60,6 +60,7 @@ function Login() {
       <Input
         placeholder="password"
         value={user.password}
+        type="password"
         onChange={(e) =>
           setUser((prevUser) => {
             return {

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { useParams, useNavigate } from 'react-router-dom'
+import FilmsList from '../filmsList/FilmsList'
 import { Button } from '../home/styles'
 
 import {
@@ -46,6 +47,7 @@ function StarshipDetail() {
         <SManufacturer>{starship.manufacturer} manufacturer</SManufacturer>
         <SPassengers> {starship.passengers} passengers</SPassengers>
         <SClass> {starship.starship_class} starship class</SClass>
+        <FilmsList films={starship.films} />
         <Button onClick={() => navigate(-1)}>⬅️</Button>
       </StarshipInfo>
     </Wrapper>
