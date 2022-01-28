@@ -4,12 +4,16 @@ import { Wrapper, Input } from './styles'
 
 import { Button } from '../home/styles'
 
+import { useNavigate } from 'react-router-dom'
+
 function CreateAccount() {
   const [user, setUser] = useState({ username: '', password: '' })
-
+  let navigate = useNavigate
   const createUser = () => {
     if (user.username && user.password !== '') {
       localStorage.setItem(user.username, JSON.stringify(user))
+
+      navigate('../starshiplist')
     }
   }
 

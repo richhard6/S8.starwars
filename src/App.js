@@ -9,10 +9,16 @@ import CreateAccount from './components/createAccount/CreateAccount'
 import { Theme } from './styles'
 import { useUser } from './hooks/useUser'
 import { useNavigate } from 'react-router-dom'
+import NavBar from './components/navBar/NavBar'
 
 function App() {
   const [starships, setStarships] = useState([])
   const [page, setPage] = useState(0)
+
+  //FALTA NAVIGATION BAR ..... Y MOSTRAR QUIEN ESTA LOGEADO,
+  //FALTA MOSTRAR LOS ACTORES Y LAS PELIS EN LAS QUE HAN SALIDO ESAS NAVES
+  //CREANDAO NUEVO COMPKNENTE REEUTILIZABOE
+  //NAV BAR Y UNITN TEST Y DONE
 
   const [loading, setLoading] = useState(false)
 
@@ -43,6 +49,7 @@ function App() {
   return (
     <Theme>
       <Router>
+        <NavBar />
         <Routes>
           <Route path="/starships/:name" element={<StarshipDetail />}></Route>
           <Route

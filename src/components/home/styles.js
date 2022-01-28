@@ -15,11 +15,11 @@ export const Button = styled.button`
   color: white;
   background-color: white;
   border-radius: 8px;
-  background-color: black;
   margin-top: 2rem;
   border: none;
   font-weight: 900;
   font-size: ${(props) => (props.small ? '1rem' : '3rem')};
+  background-color: #121212;
 `
 
 export const Title = styled.h1`
