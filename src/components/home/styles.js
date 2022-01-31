@@ -19,7 +19,7 @@ export const Button = styled.button`
   border: none;
   font-weight: 900;
   font-size: ${(props) => (props.small ? '1rem' : '3rem')};
-  background-color: #121212;
+  background-color: #111412;
 `
 
 export const Title = styled.h1`

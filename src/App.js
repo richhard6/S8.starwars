@@ -45,7 +45,7 @@ function App() {
   }, [page])
 
   return (
-    <Theme>
+    <Theme className="font-face-gm">
       <Router>
         <NavBar />
         <Routes>

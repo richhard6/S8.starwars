@@ -49,7 +49,9 @@ function StarshipDetail() {
         <SClass> {starship.starship_class} starship class</SClass>
         <FilmsList films={starship.films} />
         <FilmsList films={starship.pilots} pilots={true} />
-        <Button onClick={() => navigate(-1)}>⬅️</Button>
+        <Button small onClick={() => navigate(-1)}>
+          ⬅back
+        </Button>
       </StarshipInfo>
     </Wrapper>
   )

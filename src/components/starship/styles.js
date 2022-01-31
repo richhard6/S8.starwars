@@ -28,10 +28,10 @@ export const StarshipInfo = styled.div`
   font-weight: 300;
   diplay: flex;
   flex-direction: column;
-  border-radius: 0px 8px 8px 0;
+  border-radius: 8px;
   background-color: #121212;
   padding: 2rem;
-  height: 33vh;
+  height: 55vh;
 `
 
 export const StarshipModel = styled.h3`
