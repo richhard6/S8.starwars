@@ -5,7 +5,7 @@ import { Wrapper } from './styles'
 
 function FilmsList({ films, pilots }) {
   const [show, setShow] = useState(false)
-  console.log(pilots)
+  console.log(films)
   return (
     <Wrapper>
       <Button small onClick={() => setShow(!show)}>

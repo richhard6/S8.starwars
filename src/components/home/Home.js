@@ -9,7 +9,7 @@ function Home() {
     <Wrapper>
       <Title>Welcome to Starwars Starships</Title>
       <Link to="/starshiplist">
-        <Button>START! </Button>
+        <Button className="button">START!</Button>
       </Link>
     </Wrapper>
   )

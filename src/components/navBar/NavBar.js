@@ -15,10 +15,16 @@ function NavBar() {
 
   return (
     <Wrapper>
-      <NavLink to="/">Home</NavLink>
+      <NavLink data-testid="navBar" to="/">
+        Home
+      </NavLink>
       <NavLink to="/starshiplist">Starships</NavLink>
       {!logged && <NavLink to="/create">Create Account</NavLink>}
-      {!logged && <NavLink to="login">Log In</NavLink>}
+      {!logged && (
+        <NavLink className="login" to="login">
+          Log In
+        </NavLink>
+      )}
     </Wrapper>
   )
 }

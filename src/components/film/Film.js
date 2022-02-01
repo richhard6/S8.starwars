@@ -9,6 +9,8 @@ function Film({ url, pilots }) {
       .then((film) => setFilm(film))
   }, [url])
 
+  console.log(url)
+
   return (
     <>
       <div>{!pilots ? film.title : film.name} </div>
