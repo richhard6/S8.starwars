@@ -13,7 +13,7 @@ function CreateAccount() {
   const createUser = () => {
     if (user.username && user.password !== '') {
       localStorage.setItem(user.username, JSON.stringify(user))
-
+      sessionStorage.setItem('currentUser', JSON.stringify(user))
       navigate('../starshiplist')
     }
   }
