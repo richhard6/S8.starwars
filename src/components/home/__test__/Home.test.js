@@ -41,7 +41,6 @@ it('it routes correctly if user is not logged', () => {
     const goHomeLink = document.querySelector('button')
     // Click it
     goHomeLink.dispatchEvent(new MouseEvent('click', { bubbles: true }))
-    console.log(document.location.href)
   })
   expect(document.location.href).toBe('http://localhost/create')
 })
